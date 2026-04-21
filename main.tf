@@ -1,5 +1,6 @@
 provider "aws" {
     region = "us-east-2"
+    profile = "pls-19-20"
 }
 
 module "rds" {
