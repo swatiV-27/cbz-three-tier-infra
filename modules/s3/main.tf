@@ -1,6 +1,6 @@
 # Create an S3 bucket
-resource "aws_s3_bucket" "cbz_bucket" {
-  bucket = "cbz-frontend-project-bux" # Replace with a globally unique bucket name
+resource "aws_s3_bucket" "cbz_bucket_one" {
+  bucket = "cbz-frontend-project-bux-one" # Replace with a globally unique bucket name
 
   # Enable static website hosting
   website {
