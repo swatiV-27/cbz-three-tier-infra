@@ -25,7 +25,7 @@ resource "aws_s3_bucket_public_access_block" "example" {
 }
 # Set the bucket policy to allow public read access (use cautiously)
 resource "aws_s3_bucket_policy" "static_website_policy" {
-  bucket = aws_s3_bucket.cbz_bucket.id
+  bucket = aws_s3_bucket.cbz_bucket_one.id
 
   policy = jsonencode({
     Version = "2012-10-17"
@@ -43,6 +43,6 @@ resource "aws_s3_bucket_policy" "static_website_policy" {
 
 # Output the bucket's website endpoint
 output "website_endpoint" {
-  value       = aws_s3_bucket.cbz_bucket.website_endpoint
+  value       = aws_s3_bucket.cbz_bucket_one.website_endpoint
   description = "The URL to access the static website"
 }
