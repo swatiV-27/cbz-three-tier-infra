@@ -16,7 +16,7 @@ resource "aws_s3_bucket" "cbz_bucket_one" {
 
 # Disable Block Public Access
 resource "aws_s3_bucket_public_access_block" "example" {
-  bucket = aws_s3_bucket.cbz_bucket.bucket
+  bucket = aws_s3_bucket.cbz_bucket_one.bucket
 
   block_public_acls       = false
   block_public_policy     = false
@@ -34,7 +34,7 @@ resource "aws_s3_bucket_policy" "static_website_policy" {
         Effect    = "Allow"
         Principal = "*"
         Action    = "s3:GetObject"
-        Resource  = "${aws_s3_bucket.cbz_bucket.arn}/*"
+        Resource  = "${aws_s3_bucket.cbz_bucket_one.arn}/*"
       }
     ]
   })
